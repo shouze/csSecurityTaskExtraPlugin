@@ -47,11 +47,11 @@ EOF;
     if ($arguments['user']) 
     {
       $column = (int) $arguments['user'] ? 'id' : 'username';
-      $users = Doctrine::getTable('sfGuardUser')->createQuery()->where($column.' = ?', $arguments['user'])->execute();
+      $users = Doctrine_Core::getTable('sfGuardUser')->createQuery()->where($column.' = ?', $arguments['user'])->execute();
     }
     else
     {
-      $users = Doctrine::getTable('sfGuardUser')->findAll();
+      $users = Doctrine_Core::getTable('sfGuardUser')->findAll();
     }
     
     if (!$users->count()) 

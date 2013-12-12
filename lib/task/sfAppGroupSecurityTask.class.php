@@ -44,11 +44,11 @@ EOF;
     
     if ($arguments['group']) 
     {
-      $groups = Doctrine::getTable('sfGuardGroup')->createQuery()->where('name = ?', $arguments['group'])->execute();
+      $groups = Doctrine_Core::getTable('sfGuardGroup')->createQuery()->where('name = ?', $arguments['group'])->execute();
     }
     else
     {
-      $groups = Doctrine::getTable('sfGuardGroup')->findAll();
+      $groups = Doctrine_Core::getTable('sfGuardGroup')->findAll();
     }
     
     if (!$groups->count()) 
